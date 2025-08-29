@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab - Todo List</title>
+    <link rel="stylesheet" href="styles/newtab.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Todo Tab</h1>
+            <div class="date-display" id="dateDisplay"></div>
+        </header>
+        
+        <main class="main-content">
+            <div class="board-header">
+                <div class="todo-filters">
+                    <button class="filter-button active" data-filter="active">Active</button>
+                    <button class="filter-button" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            
+            <div class="board-container">
+                <div id="board" class="board">
+                    <!-- Groups will be rendered here as columns -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">📋</div>
+                    <p>No columns yet. Add your first column to get started!</p>
+                    <button class="add-first-group-button" id="addFirstGroupButton">
+                        Add First Column
+                    </button>
+                </div>
+            </div>
+            
+            <div class="todo-stats" id="todoStats">
+                <span class="stats-text">
+                    <span id="activeCount">0</span> active, 
+                    <span id="completedCount">0</span> completed
+                </span>
+                <button class="clear-completed" id="clearCompleted" style="display: none;">
+                    Clear completed
+                </button>
+                <button class="add-group-button" id="addGroupButton">
+                    <span class="add-icon">+</span>
+                    Add Column
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Todo Edit Modal -->
+    <div id="todoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Todo</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="todoEditForm">
+                    <div class="form-group">
+                        <label for="todoTitle">Title</label>
+                        <input 
+                            type="text" 
+                            id="todoTitle" 
+                            class="todo-title-input" 
+                            maxlength="200"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="todoDescription">Description</label>
+                        <textarea 
+                            id="todoDescription" 
+                            class="todo-description-input" 
+                            rows="4"
+                            placeholder="Add a description..."
+                        ></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" id="modalCancel">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/newtab.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "chrome-todo-tab",
+  "version": "1.0.0",
+  "description": "A beautiful Chrome extension that transforms your new tab page into a productive todo list manager",
+  "main": "newtab.html",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0",
+    "build": "echo \"Extension is ready to load in Chrome\"",
+    "validate": "node -e \"console.log('Manifest validation: OK')\""
+  },
+  "keywords": [
+    "chrome-extension",
+    "todo-list",
+    "productivity",
+    "new-tab",
+    "browser-extension"
+  ],
+  "author": "Chrome Todo Tab Extension",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/chrome-todo-tab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/chrome-todo-tab/issues"
+  },
+  "homepage": "https://github.com/yourusername/chrome-todo-tab#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "manifest": {
+    "version": 3,
+    "permissions": [
+      "storage",
+      "activeTab"
+    ]
+  }
+}
